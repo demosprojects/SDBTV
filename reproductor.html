@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor - SDBTV</title>
+    <link rel="stylesheet" href="styless.css">
+    <link rel="icon" href="sanlorenzologo.webp" type="image/webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="sanlorenzologo.webp" alt="SDBTV Logo" class="logo">
+        </a>
+        
+        <button id="homeButton" class="donate-button">Canales y agenda</button>
+        <button id="donateButton" class="donate-button">Dejar una donación</button>
+    </header>
+    
+    <div class="container">
+        <h2>Reproduciendo contenido</h2>
+        
+        <!-- Contenedor para el iframe -->
+        <div id="video-container">
+            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mapa de streams
+            const streams = {
+                "espnop1": "https://streamtp3.com/global1.php?stream=espn",
+                "espnop2": "https://streamdz4.lat/player/embed.php?channel=espn",
+                "espnop3": "https://la12hd.com/vivo/canal.php?stream=espn",
+                
+
+                "espn2op1": "https://streamtp3.com/global1.php?stream=espn2",
+                "espn2op2": "https://streamdz3.lat/player/embed.php?channel=espn2",
+                "espn2op3": "https://la12hd.com/vivo/canal.php?stream=espn2",
+
+                "espnpremiumop1": "https://streamtp3.com/global1.php?stream=espnpremium",
+                "espnpremiumop2": "https://streamdz3.lat/player/embed.php?channel=espnpremium",
+                "espnpremiumop3": "https://la12hd.com/vivo/canal.php?stream=espnpremium",
+
+                "tntsportsop1": "https://streamtp3.com/global1.php?stream=tntsports",
+                "tntsportsop2": "https://streamdz3.lat/player/embed.php?channel=tntar",
+                "tntsportsop3": "https://la12hd.com/vivo/canal.php?stream=tntsports", 
+                "tntsportsop4": "https://gol12.com/online/canales.php?stream=tntsports",
+
+                "fox1op1": "https://streamtp3.com/global1.php?stream=fox1ar",
+                "fox1op2": "https://streamdz3.lat/player/embed.php?channel=foxar",
+                "fox1op3": "https://la12hd.com/vivo/canal.php?stream=foxsports",
+                
+
+                "fox2op1": "https://streamtp3.com/global1.php?stream=fox2ar",
+                "fox2op2": "https://streamdz3.lat/player/embed.php?channel=fox2ar",
+                "fox2op3": "https://la12hd.com/vivo/canal.php?stream=foxsports2", 
+
+                "dsportsop1": "https://streamtp3.com/global1.php?stream=dsports",
+                "dsportsop2": "https://streamdz3.lat/player/embed.php?channel=dsports",
+                "dsportsop3": "https://la12hd.com/vivo/canal.php?stream=dsports",
+
+                "dsports2op1": "https://streamtp3.com/global1.php?stream=dsports2",
+                "dsports2op2": "https://streamdz3.lat/player/embed.php?channel=dsports2",
+                "dsports2op3": "https://la12hd.com/vivo/canal.php?stream=dsports2",
+
+
+                "tycsportsop1": "https://streamtp3.com/global1.php?stream=tycsports",
+                "tycsportsop2": "https://streamdz3.lat/player/embed.php?channel=tyc",
+                "tycsportsop3": "https://la12hd.com/vivo/canal.php?stream=tycsports",
+
+                "tycintop1": "https://la12hd.com/vivo/canal.php?stream=tycinternacional",
+                
+
+                "telefeop1": "https://streamtp3.com/global1.php?stream=telefe",
+                "telefeop2": "https://la12hd.com/vivo/canal.php?stream=telefe",
+                //disney streamdz4
+                "disney3": "https://streamdz4.lat/player/embed.php?channel=disney3",
+                "disney6": "https://streamdz4.lat/player/embed.php?channel=disney6",
+                "disney7": "https://streamdz4.lat/player/embed.php?channel=disney7",
+                "disney8": "https://streamdz4.lat/player/embed.php?channel=disney8",
+                "disney11": "https://streamdz4.lat/player/embed.php?channel=disney11",
+
+                "espnbr": "https://streamdz4.lat/player/embed.php?channel=espnbr",
+                "espn2": "https://streamtp3.com/global1.php?stream=espn2",
+              
+                //disney streamtp3
+                "disney7op2": "https://streamtp3.com/global1.php?stream=disney7",
+                "disney17op2": "https://streamtp3.com/global1.php?stream=disney17",
+                
+                 
+
+            };
+    
+            // Obtener el canal desde la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const channel = urlParams.get("ch");
+    
+            if (channel && streams[channel]) {
+                document.getElementById("video-iframe").setAttribute("src", streams[channel]);
+            } else {
+                document.getElementById("video-container").innerHTML = '<p>No se ha seleccionado ningún contenido para reproducir.</p>';
+            }
+        });
+    </script>
+    <div class="dmca-button-container">
+        <button id="dmcaButton">DMCA</button>
+        <div id="dmcaText" class="dmca-text">
+            <h2>Cumplimiento del DMCA</h2>
+            <p><strong>Este sitio web cumple con el Digital Millennium Copyright Act (DMCA).</strong> No transmitimos ni alojamos de manera ilegal ningún juego, canal, evento u otro contenido protegido por derechos de autor.</p>
+            
+            <h2>Descargo de Responsabilidad</h2>
+            <p><strong>Este sitio web opera de acuerdo con el Digital Millennium Copyright Act (DMCA).</strong> En virtud de esta ley, nos comprometemos a responder rápidamente a las reclamaciones de violación de derechos de autor y a tomar las medidas necesarias para eliminar el material infractor.</p>
+            <p><strong>Los enlaces proporcionados en este sitio web apuntan a contenido alojado en servidores externos</strong> y no alojamos ni transmitimos de manera directa ningún material protegido por derechos de autor. No tenemos control sobre el contenido de estos servidores externos y no nos hacemos responsables por el uso indebido que se pueda hacer de dicho contenido.</p>
+            
+            <h2>Compromiso con los Derechos de Autor</h2>
+            <p><strong>Entendemos la importancia de proteger los derechos de autor</strong> y estamos comprometidos a cumplir con todas las leyes aplicables. Si eres propietario de los derechos de autor de algún contenido y crees que se ha utilizado de manera inapropiada, te instamos a que nos contactes de inmediato para que podamos abordar el problema de manera efectiva.</p>
+            <p><strong>Además del DMCA, este sitio web también se adhiere a otras leyes y regulaciones relacionadas con la propiedad intelectual y la protección de derechos de autor.</strong> Nos reservamos el derecho de modificar o eliminar cualquier enlace o contenido que infrinja estas leyes.</p>
+            
+            <h2>Contacto</h2>
+            <p><strong>Correo electrónico:</strong> <a href="mailto:xeneizetv1905@gmail.com">xeneizetv1905@gmail.com</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Agrega un evento al botón DMCA para mostrar/ocultar el texto y desplazar la página
+        document.getElementById('dmcaButton').addEventListener('click', function() {
+            const dmcaText = document.getElementById('dmcaText');
+            
+            // Alternar la visibilidad del texto
+            if (dmcaText.style.display === "none" || dmcaText.style.display === "") {
+                dmcaText.style.display = "block"; // Cambia a visible
+                dmcaText.scrollIntoView({ behavior: 'smooth' }); // Desplaza hacia el div
+            } else {
+                dmcaText.style.display = "none"; // Oculta el texto
+            }
+        });
+
+        
+        document.getElementById('donateButton').addEventListener('click', function() {
+    window.location.href='donaciones.html';
+});
+
+document.getElementById('homeButton').addEventListener('click', function() {
+    window.location.href = 'index.html'; // Redirige a la página de inicio
+});
+document.getElementById('proximospartidos').addEventListener('click', function() {
+    window.location.href = 'partidos.html'; // Cambia a la misma pestaña
+});
+    </script>
+</body>
+</html>

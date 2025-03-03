@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos partidos - SDBTV</title>
+    <link rel="stylesheet" href="styless.css">
+    <link rel="icon" href="sanlorenzologo.webp" type="image/webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="sanlorenzologo.webp" alt="SDBTV Logo" class="logo">
+        </a>
+        <button id="homeButton" class="donate-button">Canales y agenda</button>
+        <button id="donateButton" class="donate-button">Dejar una donación</button>
+        
+    </header>
+
+    <section id="partidos">
+        <h2 style="text-align: center;">Próximos Partidos</h2>
+        <!-- Aquí se insertará el widget de 365Scores -->
+        <div data-widget-type="entityScores" data-entity-type="team" data-entity-id="865" data-lang="es-es" data-widget-id="d9e21b09-b106-4761-9a63-2a658e6e6ae6"></div>
+<div id="powered-by">Provisto por<a id="powered-by-link" href="https://www.365scores.com/es" target="_blank">365Scores.com</a></div>
+<script src="https://widgets.365scores.com/main.js"></script>
+    </section>
+
+    <script>
+        document.getElementById('donateButton').addEventListener('click', function() {
+    window.location.href='donaciones.html';
+});
+
+document.getElementById('homeButton').addEventListener('click', function() {
+    window.location.href = 'index.html'; // Redirige a la página de inicio
+});
+    </script>
+</body>
+</html>

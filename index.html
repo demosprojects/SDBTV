@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBTV</title>
+    <link rel="stylesheet" href="styless.css">
+    <link rel="icon" href="sanlorenzologo.webp" type="image/webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="sanlorenzologo.webp" alt="SDBTV Logo" class="logo">
+        </a>
+        
+        <button id="proximospartidos" class="donate-button">Próximos partidos</button>
+        <button id="donateButton" class="donate-button">Dejar una donación</button>
+    </header>
+    
+    <div class="container">
+        <!-- Sección de la agenda -->
+    <section class="agenda">
+    <h2>Proximo partido</h2>
+    <div class="event">
+        <button class="accordion">
+            <div class="event-info">
+                <h3>Torneo Betano</h3>
+                <p>19:00 - San Lorenzo Vs. Racing Club</p>
+            </div>
+            <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/torneobetano.webp" alt="Logo torneo" class="torneo-logo">
+        </button>
+        <div class="panel">
+            <div class="sub-events">
+                <a href="reproductor.html?ch=espnpremiumop1" class="video-link">ESPN Premium opción 1</a>
+                <a href="reproductor.html?ch=espnpremiumop2" class="video-link">ESPN Premium opción 2</a>
+                <a href="reproductor.html?ch=espnpremiumop3" class="video-link">ESPN Premium opción 3</a>
+            </div>
+        </div>
+    </div>
+    <!-- Más partidos... -->
+</section>
+
+        <!-- Sección de los canales -->
+        <section class="canales">
+            <h2>Canales disponibles</h2>
+            <!-- Campo de búsqueda -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar canal..." class="search-input">
+        </div>
+            <div class="channels-grid">
+                <div class="channel">
+                    <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/ESPN1-logo.webp" alt="ESPN Logo" class="channel-logo">
+                    <button class="accordion">ESPN</button>
+                    <div class="panel">
+                        <a href="reproductor.html?ch=espnop1" class="video-link">Opción 1</a>
+                        <a href="reproductor.html?ch=espnop2" class="video-link">Opción 2</a>
+                        <a href="reproductor.html?ch=espnop3" class="video-link">Opción 3</a>
+                        
+                    </div>
+                </div>
+                <div class="channel">
+                    <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/ESPN2-logo.webp" alt="ESPN2 Logo" class="channel-logo">
+                    <button class="accordion">ESPN 2</button>
+                    <div class="panel">
+                        <a href="reproductor.html?ch=espn2op1" class="video-link">Opción 1</a>
+                        <a href="reproductor.html?ch=espn2op2" class="video-link">Opción 2</a>
+                        <a href="reproductor.html?ch=espn2op3" class="video-link">Opción 3</a>
+                    </div>
+                </div>
+
+               
+            <div class="channel">
+                <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/ESPNPremium-logo.webp" alt="ESPN Premium Logo" class="channel-logo">
+                <button class="accordion">ESPN Premium</button>
+                <div class="panel">
+                    <a href="reproductor.html?ch=espnpremiumop1" class="video-link">Opción 1</a>
+                    <a href="reproductor.html?ch=espnpremiumop2" class="video-link">Opción 2</a>
+                    <a href="reproductor.html?ch=espnpremiumop3" class="video-link">Opción 3</a>
+            </div>
+        </div>
+        <div class="channel">
+            <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/TNTSports-logo.webp" alt="TNT Sports Logo" class="channel-logo">
+            <button class="accordion">TNT Sports</button>
+            <div class="panel">
+                <a href="reproductor.html?ch=tntsportsop1" class="video-link">Opción 1</a>
+                <a href="reproductor.html?ch=tntsportsop2" class="video-link">Opción 2</a>
+                <a href="reproductor.html?ch=tntsportsop3" class="video-link">Opción 3</a>
+        </div>
+    </div>
+    
+    <div class="channel">
+        <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/TyCSports-logo.webp" alt="TyC Logo" class="channel-logo">
+        <button class="accordion">TyC Sports</button>
+        <div class="panel">
+            <a href="reproductor.html?ch=tycsportsop1" class="video-link">Opción 1</a>
+            <a href="reproductor.html?ch=tycsportsop2" class="video-link">Opción 2</a>
+            <a href="reproductor.html?ch=tycsportsop3" class="video-link">Opción 3</a>
+        </div>
+    </div>
+    <div class="channel">
+        <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/TyCSportsinternacional-logo.webp" alt="TyCInt Logo" class="channel-logo">
+        <button class="accordion">TyC Sports Internacional</button>
+        <div class="panel">
+            <a href="reproductor.html?ch=tycintop1" class="video-link">Opción 1</a>
+        </div>
+    </div>
+    <div class="channel">
+        <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/Telefe-logo.webp" alt="Telefe Logo" class="channel-logo">
+        <button class="accordion">Telefe</button>
+        <div class="panel">
+            <a href="reproductor.html?ch=telefeop1" class="video-link">Opción 1</a>
+            <a href="reproductor.html?ch=telefeop2" class="video-link">Opción 2</a>
+        </div>
+    </div>
+        </section>
+    </div>
+    <div class="dmca-button-container">
+        <button id="dmcaButton">DMCA</button>
+        <div id="dmcaText" class="dmca-text">
+            <h2>Cumplimiento del DMCA</h2>
+            <p><strong>Este sitio web cumple con el Digital Millennium Copyright Act (DMCA).</strong> No transmitimos ni alojamos de manera ilegal ningún juego, canal, evento u otro contenido protegido por derechos de autor.</p>
+            
+            <h2>Descargo de Responsabilidad</h2>
+            <p><strong>Este sitio web opera de acuerdo con el Digital Millennium Copyright Act (DMCA).</strong> En virtud de esta ley, nos comprometemos a responder rápidamente a las reclamaciones de violación de derechos de autor y a tomar las medidas necesarias para eliminar el material infractor.</p>
+            <p><strong>Los enlaces proporcionados en este sitio web apuntan a contenido alojado en servidores externos</strong> y no alojamos ni transmitimos de manera directa ningún material protegido por derechos de autor. No tenemos control sobre el contenido de estos servidores externos y no nos hacemos responsables por el uso indebido que se pueda hacer de dicho contenido.</p>
+            
+            <h2>Compromiso con los Derechos de Autor</h2>
+            <p><strong>Entendemos la importancia de proteger los derechos de autor</strong> y estamos comprometidos a cumplir con todas las leyes aplicables. Si eres propietario de los derechos de autor de algún contenido y crees que se ha utilizado de manera inapropiada, te instamos a que nos contactes de inmediato para que podamos abordar el problema de manera efectiva.</p>
+            <p><strong>Además del DMCA, este sitio web también se adhiere a otras leyes y regulaciones relacionadas con la propiedad intelectual y la protección de derechos de autor.</strong> Nos reservamos el derecho de modificar o eliminar cualquier enlace o contenido que infrinja estas leyes.</p>
+            
+            <h2>Contacto</h2>
+            <p><strong>Correo electrónico:</strong> <a href="mailto:xeneizetv1905@gmail.com">xeneizetv1905@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="donation-banner" id="donationBanner">
+        <span class="donation-icon">⚽</span>
+        <span>Si disfrutás de Somos de BoedoTV, considerá apoyarnos con una donación. <strong>Tu ayuda nos permite seguir creciendo.</strong></span>
+        <button onclick="window.open('https://link.mercadopago.com.ar/offsidetv', '_blank')">Donar ahora</button>
+        <button class="close-btn" onclick="closeBanner()">✖</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

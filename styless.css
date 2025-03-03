@@ -1,0 +1,552 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Fondo claro para mejor legibilidad */
+    color: #333; /* Texto oscuro para contraste */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0f0f0f; /* Azul de San Lorenzo para títulos */
+}
+
+a {
+    color: #004A8D; /* Azul de San Lorenzo para enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1A237E; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Header */
+header {
+    background-color: #ffffff; /* Fondo blanco para el header */
+    border-bottom: 3px solid #004A8D; /* Borde azul */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+header .logo {
+    max-width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0, 74, 141, 0.5)); /* Efecto de brillo con azul */
+}
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de agenda */
+.agenda {
+    margin-bottom: 40px;
+}
+
+.agenda h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #004A8D; /* Azul de San Lorenzo */
+}
+
+.event {
+    background-color: rgba(0, 74, 141, 0.05); /* Fondo azul con transparencia */
+    border: 1px solid rgba(0, 74, 141, 0.2);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Acordeones */
+.accordion {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0, 74, 141, 0.8); /* Azul con transparencia */
+    color: #ffffff; /* Texto blanco para contraste */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    position: relative;
+    padding-right: 40px;
+    border-radius: 12px;
+}
+
+.accordion::after {
+    content: "▼";
+    font-size: 14px;
+    color: #ffffff; /* Texto blanco para el ícono */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion:hover {
+    background-color: rgba(0, 94, 184, 0.8); /* Azul más claro */
+}
+
+.panel {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(0, 74, 141, 0.9);
+    border-radius: 0 0 12px 12px;
+}
+
+.panel .sub-events {
+    padding: 10px 0;
+}
+
+.video-link {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(36, 143, 243, 0.1); /* Fondo azul con transparencia */
+    color: #000000; /* Azul de San Lorenzo */
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.video-link:hover {
+    background-color: rgba(0, 74, 141, 0.2); /* Fondo azul más oscuro */
+}
+
+/* Sección de canales */
+.canales {
+    margin-bottom: 40px;
+}
+
+.canales h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #004A8D; /* Azul de San Lorenzo */
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-input {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid rgba(0, 74, 141, 0.3); /* Borde azul */
+    border-radius: 8px;
+    background-color: rgba(0, 74, 141, 0.8); /* Fondo azul con transparencia */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #004A8D; /* Azul de San Lorenzo */
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder en blanco */
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.channel {
+    background-color: rgba(0, 74, 141, 0.05); /* Fondo azul con transparencia */
+    border: 1px solid rgba(0, 74, 141, 0.2); /* Borde azul */
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.channel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.channel-logo {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 5px rgba(0, 74, 141, 0.5)); /* Efecto de brillo con azul */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .channels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .accordion {
+        font-size: 16px;
+    }
+}
+
+.event:hover, .channel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+a, .accordion, .video-link {
+    transition: all 0.3s ease;
+}
+
+#video-container {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border: 2px solid rgba(0, 74, 141, 0.3); /* Borde azul */
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Estilos para el logo del torneo */
+.torneo-logo {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la información del evento */
+.event-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+/* Alineación del contenido del acordeón */
+.accordion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: left;
+    background-color: rgba(0, 74, 141, 0.8); /* Azul con transparencia */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    position: relative;
+    border-radius: 12px;
+}
+
+.accordion h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.accordion p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Texto blanco con transparencia */
+}
+
+/* Estilos para el botón de DMCA */
+.dmca-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#dmcaButton {
+    background-color: #004A8D; /* Azul de San Lorenzo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#dmcaButton:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+}
+
+.dmca-text {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo para la página de donaciones */
+.donation-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.donation-options {
+    margin-bottom: 20px;
+}
+
+.donation-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #004A8D; /* Azul de San Lorenzo */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.donation-link:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+}
+
+.custom-donation {
+    margin-top: 20px;
+}
+
+.custom-donation input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-donation button {
+    padding: 20px 20px;
+    background-color: #004A8D; /* Azul de San Lorenzo */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.custom-donation button:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+}
+
+/* Estilo para el botón de donaciones en el header */
+.donate-button {
+    background-color: #004A8D; /* Azul de San Lorenzo */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
+
+.donate-button:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Estilo para la página de donaciones */
+.donation-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.donation-options {
+    margin-bottom: 20px;
+}
+
+.donation-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #004A8D; /* Azul de San Lorenzo */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.donation-link:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+    transform: translateY(-2px);
+}
+
+.donate-button:hover {
+    background-color: #1A237E; /* Azul más oscuro */
+}
+
+.donation-banner {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #738da5; /* Azul de San Lorenzo */
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    max-width: 90%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.donation-banner button {
+    background: #1A237E; /* Azul más oscuro */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.donation-banner button:hover {
+    background: #004A8D; /* Azul de San Lorenzo */
+}
+
+.donation-banner .close-btn {
+    background: #002649; /* Azul de San Lorenzo */
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donation-icon {
+    font-size: 20px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* 🔹 Ajustes en móviles */
+@media screen and (max-width: 600px) {
+    .donation-banner {
+        flex-direction: column;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .donation-banner button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .donate-button {
+        width: 55%;
+        margin: 5px 0;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+.secure-donation {
+    font-size: 16px;
+    color: #004A8D; /* Azul de San Lorenzo */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
