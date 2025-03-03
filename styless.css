@@ -245,7 +245,7 @@ a, .accordion, .video-link {
     overflow: hidden;
     border: 2px solid rgba(0, 74, 141, 0.3); /* Borde azul */
     border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(218, 107, 107, 0.8);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
