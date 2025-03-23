@@ -389,7 +389,7 @@ a, .accordion, .video-link {
 
 /* Estilo para el botón de donaciones en el header */
 .donate-button {
-    background-color: #004A8D; /* Azul de San Lorenzo */
+    background-color: #1A237E; /* Azul de San Lorenzo */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -405,7 +405,23 @@ a, .accordion, .video-link {
     background-color: #1A237E; /* Azul más oscuro */
     transform: translateY(-2px);
 }
+.par-button {
+    background-color: #c21212; /* Azul de San Lorenzo */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
 
+.par-button:hover {
+    background-color: #c21212; /* Azul más oscuro */
+    transform: translateY(-2px);
+}
 /* Estilo para la página de donaciones */
 .donation-container {
     max-width: 600px;
@@ -431,12 +447,12 @@ a, .accordion, .video-link {
 }
 
 .donation-link:hover {
-    background-color: #1A237E; /* Azul más oscuro */
+    background-color: #c8cadf; /* Azul más oscuro */
     transform: translateY(-2px);
 }
 
 .donate-button:hover {
-    background-color: #1A237E; /* Azul más oscuro */
+    background-color: #9093b3; /* Azul más oscuro */
 }
 
 .donation-banner {
