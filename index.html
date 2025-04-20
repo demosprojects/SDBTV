@@ -20,26 +20,31 @@
     
     <div class="container">
         <!-- Sección de la agenda -->
-    <section class="agenda">
-    <h2>¡Hoy Juega el Ciclón!</h2>
-    <div class="event">
-        <button class="accordion">
-            <div class="event-info">
+        <section class="agenda">
+          <h2>¡Hoy Juega el Ciclón!</h2>
+          <div class="event">
+            <button class="accordion">
+              <div class="event-info">
                 <h3>Torneo Betano</h3>
-                <p>22:00 - San Martín SJ Vs. San Lorenzo</p>
+                <p>15:30 - Deportivo Riestra Vs. San Lorenzo</p>
+              </div>
+              <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/torneobetano.webp" alt="Logo torneo" class="torneo-logo">
+            </button>
+            <div class="panel">
+              <div class="sub-events">
+                <a href="reproductor.html?ch=tntsports-a" class="video-link">TNT Sports opción 1</a>
+                <a href="reproductor.html?ch=tntsports-b" class="video-link">TNT Sports opción 2</a>
+                <a href="reproductor.html?ch=tntsports-c" class="video-link">TNT Sports opción 3</a>
+                <a href="javascript:void(0);" 
+                   class="video-link" 
+                   onclick="abrirVentana(event, 'https://nebunexa.co/cvatt.php?get=VE5UX1Nwb3J0c19IRA')">
+                   TNT Sports opción PC
+                </a>
+              </div>
             </div>
-            <img src="https://raw.githubusercontent.com/OffsideTV/logosweb/main/torneobetano.webp" alt="Logo torneo" class="torneo-logo">
-        </button>
-        <div class="panel">
-            <div class="sub-events">
-                <a href="reproductor.html?ch=espnpremiumop1" class="video-link">ESPN Premium opción 1</a>
-                <a href="reproductor.html?ch=espnpremiumop2" class="video-link">ESPN Premium opción 2</a>
-                <a href="reproductor.html?ch=espnpremiumop3" class="video-link">ESPN Premium opción 3</a>
-                <a href="https://nebunexa.co/cvatt2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&start=true" class="video-link">ESPN Premium opción 4 (PC)</a>
-            </div>
-        </div>
-    </div>
-    <!-- Más partidos... -->
+          </div>
+   
+    
 </section>
         <!-- Sección de los canales -->
         <section class="canales">
@@ -127,7 +132,21 @@
         </div>
     </div>
 
-    
+    <script>
+        function abrirVentana(e, url) {
+          e.preventDefault();
+          const width = 800;
+          const height = 600;
+          const left = (window.screen.width / 2) - (width / 2);
+          const top = (window.screen.height / 2) - (height / 2);
+          const opciones = `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,toolbar=no,menubar=no,status=no,location=no`;
+      
+          const nuevaVentana = window.open(url, 'ventana', opciones);
+          if (!nuevaVentana || nuevaVentana.closed || typeof nuevaVentana.closed === 'undefined') {
+            alert("La ventana emergente fue bloqueada. Permití los pop-ups para continuar.");
+          }
+        }
+      </script>
     <script src="script.js"></script>
 </body>
 
