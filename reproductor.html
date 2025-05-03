@@ -17,112 +17,188 @@
         <button id="homeButton" class="donate-button">Canales y agenda</button>
         <button id="donateButton" class="donate-button">Dejar una donación</button>
     </header>
-    
     <div class="container">
         <h2>Reproduciendo contenido</h2>
-        
+    
         <!-- Contenedor para el iframe -->
         <div id="video-container">
-            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+            <!-- Elementos de error, ocultos por defecto -->
+            <div id="error-message" style="display: none;">
+                <p>Este archivo de video no se puede reproducir (Error 102630).</p>
+            </div>
+            <div id="fallback-link" style="display: none;">
+                <p>Intenta verlo directamente aquí:</p>
+                <a id="fallback-url" href="#" target="_blank">Ver video</a>
+            </div>
         </div>
     </div>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Mapa de streams
             const streams = {
-                "espnop1": "https://streamtp3.com/global1.php?stream=espn",
-                "espnop2": "https://streamdz4.lat/player/embed.php?channel=espn",
-                "espnop3": "https://la12hd.com/vivo/canal.php?stream=espn",
-                "espnar": "https://streamdz4.lat/player/embed.php?channel=espnar",
+                "espn-a": {
+                    "repro1": "https://nebunexa.co/temp.html?get=RVNQTjJIRA",
+                    "sandbox": true
+                },
+                "espn-b": {
+                    "repro1": "https://streamtp4.com/global1.php?stream=espn"
+                },
+                "espn-c": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=espn"
+                },
 
-                "espn2op1": "https://streamtp3.com/global1.php?stream=espn2",
-                "espn2op2": "https://streamdz4.lat/player/embed.php?channel=espn2",
-                "espn2op3": "https://la12hd.com/vivo/canal.php?stream=espn2",
-                "espn2ar": "https://streamdz4.lat/player/embed.php?channel=espn2ar",
+
+
+                "espn2-a": {
+                    "repro1": "https://nebunexa.co/temp.html?get=RVNQTjJfQXJn&lang=1",
+                    "sandbox": true
+                },
+                "espn2-b": {
+                    "repro1": "https://streamtp4.com/global1.php?stream=espn2"
+                },
+                "espn2-c": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=espn2"
+                },
+              
+
+
+
                 
+
+
+                "espnpremium-a": {
+                    "repro1": "https://nebunexa.co/cvatt2.php?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&start=true",
+                    "sandbox": true
+                },
+                "espnpremiumext": {
+                    "repro1": "https://cablevisionflow2.dev.ar/extencion.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
+                    "sandbox": true
+                },
+                "espnpremium-b": {
+                    "repro1": "https://streamtp4.com/global1.php?stream=espnpremium"
+                },
+                "espnpremium-c": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=espnpremium"
+                },
+              
+
+
+
+                "tntsports-a": {
+                    "repro1": "https://nebunexa.co/cvatt.php?get=VE5UX1Nwb3J0c19IRA",
+                    "sandbox": true
+                },
+                "tntsportsext": {
+                    "repro1": "https://cablevisionflow2.dev.ar/extencion.html?get=VE5UX1Nwb3J0c19IRA",
+                    "sandbox": true
+                },
+
+                "tntsports-c": {
+                    "repro1": "https://streamtp4.com/global1.php?stream=tntsports"
+                },
+                "tntsports-d": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=tntsports"
+                },
                
-                "espnpremium-a": "https://streamsvv1.su/global/player.php?channel=espnpremium",
-                "espnpremium-b": "https://streamtp4.com/global1.php?stream=espnpremium",
-                "espnpremium-c": "https://la12hd.com/vivo/canal.php?stream=espnpremium",
-
-                "tntsports-a": "https://streamsvv1.su/global/player.php?channel=tntar",
-                "tntsports-b": "https://streamtp4.com/global1.php?stream=tntsports",
-                "tntsports-c": "https://la12hd.com/vivo/canal.php?stream=tntsports", 
-                "tntsports-d": "https://gol12.com/online/canales.php?stream=tntsports",
 
 
-                "tycsportsop1": "https://streamtp3.com/global1.php?stream=tycsports",
-                "tycsportsop2": "https://streamdz4.lat/player/embed.php?channel=tyc",
-                "tycsportsop3": "https://la12hd.com/vivo/canal.php?stream=tycsports",
+                "tyc-a": {
+                    "repro1": "https://cablevisionflow2.dev.ar/extencion.html?get=VHlDU3BvcnQ",
+                    "sandbox": true
+                },
+                "tyc-b": {
+                    "repro1": "https://streamtp4.com/global1.php?stream=tycsports"
+                },
+                "tyc-c": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=tycsports"
+                },
 
-                "tycintop1": "https://la12hd.com/vivo/canal.php?stream=tycinternacional",
+
+                "tycplay-a": {
+                    "repro1": "https://dtvlivegratis.com/cn.php?id=TYCPLAY"
+                },
+                "tycplay-b": {
+                    "repro1": "https://dtvlivegratis.com/287e6712-5354-48cf-a6d5-dd56bf98c498"
+                },
+
+                "tycint-a": {
+                    "repro1": "https://la12hd.com/vivo/canal.php?stream=tycinternacional"
+                },
+
+
                 
-
-               
-
-                //disney streamdz4
-                "disney1": "https://streamdz4.lat/player/embed.php?channel=disney1",
-                "disney2": "https://streamdz4.lat/player/embed.php?channel=disney2",
-                "disney3": "https://streamdz4.lat/player/embed.php?channel=disney3",
-                "disney4": "https://streamdz4.lat/player/embed.php?channel=disney4",
-                "disney5": "https://streamdz4.lat/player/embed.php?channel=disney5",
-                "disney6": "https://streamdz4.lat/player/embed.php?channel=disney6",
-                "disney7": "https://streamdz4.lat/player/embed.php?channel=disney7",
-                "disney8": "https://streamdz4.lat/player/embed.php?channel=disney8",
-                "disney9": "https://streamdz4.lat/player/embed.php?channel=disney9",
-                "disney10": "https://streamdz4.lat/player/embed.php?channel=disney10",
-                "disney11": "https://streamdz4.lat/player/embed.php?channel=disney11",
-                "disney12": "https://streamdz4.lat/player/embed.php?channel=disney12",
-                "disney13": "https://streamdz4.lat/player/embed.php?channel=disney13",
-                "disney14": "https://streamdz4.lat/player/embed.php?channel=disney14",
-                "disney15": "https://streamdz4.lat/player/embed.php?channel=disney15",
-                "disney16": "https://streamdz4.lat/player/embed.php?channel=disney16",
-                "disney17": "https://streamdz4.lat/player/embed.php?channel=disney17",
-                "disney18": "https://streamdz4.lat/player/embed.php?channel=disney18",
-                "disney19": "https://streamdz4.lat/player/embed.php?channel=disney19",
-                "disney20": "https://streamdz4.lat/player/embed.php?channel=disney20",
-
-                //disney streampt3
-                "disney1op2": "https://streamtp3.com/global1.php?stream=disney1",
-                "disney2op2": "https://streamtp3.com/global1.php?stream=disney2",
-                "disney3op2": "https://streamtp3.com/global1.php?stream=disney3",
-                "disney4op2": "https://streamtp3.com/global1.php?stream=disney4",
-                "disney5op2": "https://streamtp3.com/global1.php?stream=disney5",
-                "disney6op2": "https://streamtp3.com/global1.php?stream=disney6",
-                "disney7op2": "https://streamtp3.com/global1.php?stream=disney7",
-                "disney8op2": "https://streamtp3.com/global1.php?stream=disney8",
-                "disney9op2": "https://streamtp3.com/global1.php?stream=disney9",
-                "disney10op2": "https://streamtp3.com/global1.php?stream=disney10",
-                "disney11op2": "https://streamtp3.com/global1.php?stream=disney11",
-                "disney12op2": "https://streamtp3.com/global1.php?stream=disney12",
-                "disney13op2": "https://streamtp3.com/global1.php?stream=disney13",
-                "disney14op2": "https://streamtp3.com/global1.php?stream=disney14",
-                "disney15op2": "https://streamtp3.com/global1.php?stream=disney15",
-                "disney16op2": "https://streamtp3.com/global1.php?stream=disney15", 
-                "disney17op2": "https://streamtp3.com/global1.php?stream=disney17",
-                "disney18op2": "https://streamtp3.com/global1.php?stream=disney18",
-                "disney19op2": "https://streamtp3.com/global1.php?stream=disney19",
-                "disney20op2": "https://streamtp3.com/global1.php?stream=disney20",
-
-               
-                "tyc-dp": "https://dpstream1.my/global1.html?channel=tyc",
-               
-                "fanatiz1": "https://streamdz4.lat/player/embed.php?channel=fanatiz1",
-                 
-
+              
             };
-    
-            // Obtener el canal desde la URL
+
+            // Obtener parámetros de la URL
             const urlParams = new URLSearchParams(window.location.search);
             const channel = urlParams.get("ch");
-    
+            const getParam = urlParams.get("get");
+            const iframe = document.getElementById("video-iframe");
+            const errorMessage = document.getElementById("error-message");
+            const fallbackLink = document.getElementById("fallback-link");
+            const fallbackUrl = document.getElementById("fallback-url");
+
+            // Verificación de elementos
+            if (!iframe || !errorMessage || !fallbackLink || !fallbackUrl) {
+                console.error("Uno o más elementos del DOM no se encontraron.");
+                return;
+            }
+
+            // Manejar el canal o el parámetro get
+            let streamUrl = "";
             if (channel && streams[channel]) {
-                document.getElementById("video-iframe").setAttribute("src", streams[channel]);
+                streamUrl = streams[channel]["repro1"];
+                iframe.setAttribute("src", streamUrl);
+                if (streams[channel].sandbox) {
+                    iframe.setAttribute("sandbox", "allow-scripts allow-same-origin");
+                } else {
+                    iframe.removeAttribute("sandbox");
+                }
+            } else if (getParam) {
+                let externalUrl = `https://nebunexa.co/cvatt.php?get=${getParam}`;
+                if (getParam === "Rm94X1Nwb3J0c19QcmVtaXVuX0hE") {
+                    externalUrl = `https://nebunexa.co/cvatt2.php?get=${getParam}&start=true`;
+                } else if (["RVNQTjJIRA", "RVNQTjJfQXJn", "RVNQTjM", "RVNQTkhE", "Rm94U3BvcnRzMl9VWQ==", "RXZlbnRvczFIRA"].includes(getParam)) {
+                    externalUrl = `https://nebunexa.co/temp.html?get=${getParam}${urlParams.get("lang") ? "&lang=" + urlParams.get("lang") : ""}`;
+                }
+                streamUrl = externalUrl;
+                iframe.setAttribute("src", streamUrl);
+                iframe.setAttribute("sandbox", "allow-scripts allow-same-origin"); // Aplicar sandbox para getParam
+                fallbackUrl.href = externalUrl;
+                fallbackUrl.textContent = externalUrl;
             } else {
                 document.getElementById("video-container").innerHTML = '<p>Canal no disponible o desactivado.</p>';
+                return;
             }
+
+            // Mostrar mensaje de error y enlace de fallback si el iframe no carga
+            iframe.onerror = function () {
+                if (errorMessage && fallbackLink && fallbackUrl) {
+                    errorMessage.style.display = "block";
+                    fallbackLink.style.display = "block";
+                } else {
+                    console.error("Elementos de error o fallback no disponibles.");
+                }
+            };
+
+            // Verificación adicional tras cargar el iframe
+            iframe.onload = function () {
+                if (iframe.contentDocument && iframe.contentDocument.body.textContent.includes("no se puede reproducir")) {
+                    if (errorMessage && fallbackLink && fallbackUrl) {
+                        errorMessage.style.display = "block";
+                        fallbackLink.style.display = "block";
+                    }
+                }
+            };
+
+           
         });
     </script>
+
     <div class="dmca-button-container">
         <button id="dmcaButton">DMCA</button>
         <div id="dmcaText" class="dmca-text">
@@ -138,10 +214,12 @@
             <p><strong>Además del DMCA, este sitio web también se adhiere a otras leyes y regulaciones relacionadas con la propiedad intelectual y la protección de derechos de autor.</strong> Nos reservamos el derecho de modificar o eliminar cualquier enlace o contenido que infrinja estas leyes.</p>
             
             <h2>Contacto</h2>
-            <p><strong>Correo electrónico:</strong> <a href="mailto:xeneizetv1905@gmail.com">xeneizetv1905@gmail.com</a></p>
+            <p><strong>Correo electrónico:</strong> <a href="mailto:offsidetve@gmail.com">offsideteve@gmail.com</a></p>
         </div>
     </div>
+
     
+
     <script>
         // Agrega un evento al botón DMCA para mostrar/ocultar el texto y desplazar la página
         document.getElementById('dmcaButton').addEventListener('click', function() {
@@ -156,17 +234,19 @@
             }
         });
 
-        
         document.getElementById('donateButton').addEventListener('click', function() {
-    window.location.href='donaciones.html';
-});
+            window.location.href = 'donaciones.html'; 
+        });
+       
+        document.getElementById('chanels').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redirige a la página de inicio
+        });
 
-document.getElementById('homeButton').addEventListener('click', function() {
-    window.location.href = 'index.html'; // Redirige a la página de inicio
-});
-document.getElementById('proximospartidos').addEventListener('click', function() {
-    window.location.href = 'partidos.html'; // Cambia a la misma pestaña
-});
+        document.getElementById("reportButton").addEventListener("click", function() {
+            window.location.href = 'fallos.html'; 
+        });
     </script>
+
+   
 </body>
 </html>
